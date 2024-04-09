@@ -65,6 +65,18 @@ p {
   @apply font-semibold tracking-tighter leading-none underline-offset-[1.2vw] underline;
 }
 
+.path-second,
+.path-third {
+  stroke-dasharray: 28;
+  stroke-dashoffset: 28;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.path-second:hover,
+.path-third:hover {
+  stroke-dashoffset: 0;
+}
+
 @media (max-width: 1024px) {
   .big-link {
     font-size: 6vw;
