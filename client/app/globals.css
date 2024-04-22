@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  @apply !bg-background;
+  @apply bg-background dark:bg-black;
 }
 
 @layer utilities {
@@ -47,6 +47,11 @@ p {
 
 .panel p {
   @apply font-medium text-base md:text-xl;
+}
+
+.hamburger .pills {
+  font-size: 9vw;
+  @apply !border-none font-semibold tracking-tighter leading-none h-min bg-transparent  hover:text-black hover:bg-transparent text-black dark:text-background;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

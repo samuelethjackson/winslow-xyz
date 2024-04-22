@@ -11,7 +11,7 @@ const AboutPanel: React.FC<AboutProps> = (className) => {
 
   return (
     <Panel buttonLabel="About">
-      <PanelSkeleton bottomTitle="About">
+      <PanelSkeleton title="About">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

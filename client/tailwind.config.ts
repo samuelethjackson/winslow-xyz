@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         "background":"#E5E5E5",
+        "black":"#222222",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -19,5 +20,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
 export default config;

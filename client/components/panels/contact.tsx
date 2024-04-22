@@ -15,7 +15,7 @@ const ContactPanel: React.FC<ContactProps> = (props) => {
   // Component logic here
 
   return (
-    <BottomPanel buttonLabel="Contact">
+    <BottomPanel buttonLabel="Contact" dark={true}>
       <div className="w-full flex flex-col gap-[11vh] items-end p-8">
         <Drawer.Close
             asChild

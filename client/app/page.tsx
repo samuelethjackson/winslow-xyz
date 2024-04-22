@@ -8,9 +8,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="h-dvh w-screen">
+    <main className="h-dvh w-screen text-black dark:text-background">
       <Header />
-      <div className="grid grid-cols-9 grid-rows-5 px-5 md:px-8 py-12 h-full w-full">
+      <div className="grid grid-cols-9 grid-rows-5 px-5 md:px-8 py-12 h-full w-full ">
         <div className="col-start-1 col-end-10 row-end-4 md:row-end-6 flex flex-col gap-4 center self-end">
           <NavigationBubbles />
           <h2>Accelarating <br/>humanity through growth.</h2>

@@ -12,7 +12,7 @@ const InvestingPanel: React.FC<InvestingProps> = (props) => {
 
   return (
     <Panel buttonLabel="Investing" updated={true}>
-      <PanelSkeleton topTitle="Investing">
+      <PanelSkeleton title="Investing">
         <div className="w-full h-full flex flex-col justify-between gap-4">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
