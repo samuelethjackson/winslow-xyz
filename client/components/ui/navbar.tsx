@@ -13,7 +13,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = () => {
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.4, 0.405], [0, 1, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.15, 0.151], [0, 1, 1]);
 
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();

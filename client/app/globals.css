@@ -17,7 +17,7 @@
 }
 
 html {
-  @apply no-scrollbar;
+  @apply no-scrollbar overflow-x-hidden scroll-smooth;
 }
 
 body {

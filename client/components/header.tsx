@@ -13,7 +13,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, menu }) => {
   return (
-    <header className="absolute grid grid-cols-9 grid-rows-2 gap-1 px-6 py-4 w-full h-20">
+    <header className="absolute grid grid-cols-9 grid-rows-2 gap-1 px-6 py-4 w-full h-20 z-50">
       {!menu && (
         <>
       <p className="col-start-1 col-end-8 self-start row-start-1 !z-[999]">Winslow Strong</p>

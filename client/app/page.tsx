@@ -5,6 +5,7 @@ import About from "@/components/sections/about";
 import Navbar from "@/components/ui/navbar";
 import Investing from "@/components/sections/investing";
 import Philantropy from "@/components/sections/philantropy";
+import Contact from "@/components/sections/contact";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Investing />
       <Philantropy />
+      <Contact />
       <Footer />
     </main>
   );
