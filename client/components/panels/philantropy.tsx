@@ -1,6 +1,6 @@
 import React from "react";
-import Panel from "../elements/panel";
-import PanelSkeleton from "../elements/panel-skeleton";
+import Panel from "./structure/panel";
+import PanelSkeleton from "./structure/panel-skeleton";
 
 interface PhilantropyProps {
   // Define your props here

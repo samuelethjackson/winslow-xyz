@@ -1,6 +1,6 @@
 import React from "react";
-import Panel from "../elements/panel";
-import PanelSkeleton from "../elements/panel-skeleton";
+import Panel from "./structure/panel";
+import PanelSkeleton from "./structure/panel-skeleton";
 
 interface AboutProps {
   className?: string;
@@ -12,6 +12,11 @@ const AboutPanel: React.FC<AboutProps> = (className) => {
   return (
     <Panel buttonLabel="About">
       <PanelSkeleton title="About">
+        <h3>This is what drives me.</h3>
+        <h4 className="mb-8">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

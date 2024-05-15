@@ -20,7 +20,7 @@ const NavigationBubbles: React.FC = () => {
       <div className="-rotate-[60deg] md:rotate-0 col-start-5 row-start-2">
         <PhilantropyPanel />
       </div>
-      <div className="flex col-start-4 row-start-2 size-16 bg-black text-background dark:bg-white dark:text-black center rounded-full text-5xl pt-4 self-end">*</div>
+      <div className="hidden md:flex col-start-4 row-start-2 size-16 bg-black text-background dark:bg-white dark:text-black center rounded-full text-5xl pt-4 self-end">*</div>
     </div>
   );
 };

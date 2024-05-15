@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Drawer } from "vaul";
-import CloseIcon from "../icons/close";
+import CloseIcon from "../../icons/close";
 
 interface PanelSkeletonProps {
   title?: string;
@@ -21,10 +21,10 @@ const PanelSkeleton: React.FC<PanelSkeletonProps> = ({ title, children }) => {
             <CloseIcon />
           </button>
         </Drawer.Close>
-        <div className="flex flex-col gap-8 w-full h-full overflow-y-auto no-scrollbar">
+        <div className="flex flex-col gap-8 w-full h-full overflow-y-auto no-scrollbar max-w-3xl">
           {children}
         </div>
-        <p className="absolute bottom-4 left-6 font-medium !text-sm md:!text-base">{title}</p>
+        <p className="hidden absolute top-4 left-6 font-medium !text-sm md:!text-base">{title}</p>
       </div>
     </div>
   );

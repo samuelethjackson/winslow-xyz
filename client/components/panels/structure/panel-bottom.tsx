@@ -25,8 +25,8 @@ const BottomPanel: React.FC<PanelProps> = ({
         </div>
       </Drawer.Trigger>
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed w-screen h-screen bottom-0 left-0 inset-0 bg-black/75 backdrop-blur-sm outline-none" />
-        <Drawer.Content className="bg-black flex flex-col h-[50vh] w-full fixed bottom-0 left-0 outline-none panel">
+        <Drawer.Overlay className="fixed w-screen h-screen bottom-0 left-0 inset-0 bg-black/10 backdrop-blur-md outline-none" />
+        <Drawer.Content className="bg-black flex flex-col h-[40vh] w-full fixed bottom-0 left-0 outline-none panel">
           {children}
         </Drawer.Content>
       </Drawer.Portal>

@@ -20,7 +20,7 @@ const Panel: React.FC<PanelProps> = ({ children, buttonLabel, updated, dark }) =
         </div>
       </Drawer.Trigger>
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed w-screen h-screen bottom-0 left-0 inset-0 bg-black/75 backdrop-blur-sm outline-none" />
+        <Drawer.Overlay className="fixed w-screen h-screen bottom-0 left-0 inset-0 bg-black/50 outline-none" />
         <Drawer.Content className="bg-background flex flex-col h-full w-full md:max-w-[50vw] fixed bottom-0 left-0 outline-none panel">
           {children}
         </Drawer.Content>

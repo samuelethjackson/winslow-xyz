@@ -11,6 +11,7 @@ const CloseIcon: React.FC<CloseIconProps> = ({ color = 'black' }) => {
   const { theme } = useTheme();
 
   const strokeColor = theme === "dark" ? "#E5E5E5" : "#000000";
+  const accentColor = theme === "dark" ? "#000000" : "#E5E5E5";
 
   return (
     <div className="flex flex-row center gap-4 cursor-pointer">

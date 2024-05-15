@@ -42,7 +42,9 @@ const Hamburger: React.FC<HamburgerProps> = ({ color = "black" }) => {
         <Drawer.Content className="bg-background flex flex-col h-full w-full fixed bottom-0 left-0 outline-none panel">
           <Header menu={true}/>
           <div className="w-full h-full flex flex-col center gap-8 hamburger">
-            <AboutPanel />
+          <div className="strike text-black">
+              <AboutPanel />
+            </div>
             <InvestingPanel />
             <PhilantropyPanel />
             <ContactPanel />

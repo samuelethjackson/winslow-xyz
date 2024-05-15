@@ -1,9 +1,9 @@
 "use client"
 
 import React from "react";
-import Panel from "../elements/panel";
-import PanelSkeleton from "../elements/panel-skeleton";
-import BottomPanel from "../elements/panel-bottom";
+import Panel from "./structure/panel";
+import PanelSkeleton from "./structure/panel-skeleton";
+import BottomPanel from "./structure/panel-bottom";
 import { Drawer } from "vaul";
 import CloseIcon from "../icons/close";
 

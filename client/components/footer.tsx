@@ -6,7 +6,8 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ title }) => {
   return (
-    <footer className="hidden fixed bottom-0 md:grid grid-cols-9 grid-rows-1 px-8 py-4 w-screen h-min z-10">
+    <footer className="grid grid-cols-9 grid-rows-1 px-8 py-4 w-full h-[50svh] z-10">
+      <h1>winslow.</h1>
         <p className="col-start-9 self-end place-self-end row-start-1">
         <a href='mailto:opportunities@winslow.xyz'>opportunities@winslow.xyz</a>
         </p>
