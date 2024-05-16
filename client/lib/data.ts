@@ -44,15 +44,15 @@ export const philantropy = [
       "Sustainability isn't just a buzzword—it's a guiding principle. I advocate for initiatives that prioritize environmental conservation, economic empowerment, and social equity. By investing in projects that promote sustainable development, I aim to create a more resilient and inclusive future for generations to come.",
   },
   {
-    title: "Empowering Communities, Amplifying Voices",
+    title: "Amplifying Voices",
     character: "!",
     description:
-      "True progress is achieved when every voice is heard and every individual is empowered to thrive. I believe in championing grassroots efforts and community-driven initiatives that empower marginalized populations and foster social cohesion. By amplifying diverse voices and supporting community-led solutions, I strive to build a more just and equitable society.",
+      "True progress is achieved when every voice is heard and empowered to thrive. I believe in championing grassroots efforts and community-driven initiatives that empower marginalized populations and foster social cohesion. By amplifying diverse voices and supporting community-led solutions to build a more just and equitable society.",
   },
   {
-    title: "Building Bridges for Progress",
+    title: "Building Bridges",
     character: "+",
     description:
-      "I believe in building bridges for progress by fostering collaboration and partnership among diverse stakeholders. By embracing dialogue and cooperation, we can address complex challenges and create lasting impact on a global scale.",
+      "I believe in building bridges for progress by fostering collaboration and partnership among diverse stakeholders. By embracing dialogue and cooperation, we can address complex challenges and create lasting impact on a global scale. Let's leverage expertise and resources to tackle some of the world's most pressing challenges.",
   },
 ];
