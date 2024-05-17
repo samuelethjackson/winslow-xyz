@@ -17,7 +17,7 @@
 }
 
 html {
-  @apply no-scrollbar overflow-x-hidden scroll-smooth transition-transform duration-1000 ease-out;
+  @apply no-scrollbar overflow-x-hidden overscroll-y-none scroll-smooth transition-transform duration-1000 ease-out;
 }
 
 body {
@@ -41,20 +41,19 @@ h1 {
 }
 
 h2 {
-  font-size: 9vw;
-  @apply font-semibold tracking-tighter leading-none;
+  @apply font-semibold tracking-tighter leading-none md:text-[108px];
 }
 
 h3 {
-  @apply font-semibold tracking-tighter text-6xl leading-[1.1] capitalize;
+  @apply font-semibold tracking-tighter text-5xl leading-[1.1] capitalize;
 }
 
 h4 {
-  @apply font-semibold tracking-tighter text-3xl capitalize;
+  @apply font-semibold tracking-tighter text-2xl capitalize;
 }
 
 p {
-  @apply font-medium text-sm md:text-lg max-w-[50ch];
+  @apply font-medium text-sm md:text-base max-w-[50ch];
 }
 
 .panel p {

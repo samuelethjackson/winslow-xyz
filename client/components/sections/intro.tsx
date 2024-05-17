@@ -1,6 +1,11 @@
-import React from "react";
+"use client"
+
+import React, { useRef } from "react";
 import NavigationBubbles from "../navigation-bubbles";
 import Avatar from "../avatar";
+import VanishingParagraph from "../ui/vanishing-paragraph";
+import Navbar from "../ui/navbar";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 interface IntroProps {
   title?: string;
@@ -8,28 +13,36 @@ interface IntroProps {
 }
 
 const Intro: React.FC<IntroProps> = ({}) => {
+  const introRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: introRef,
+    offset: ["start start", "end end"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
+  
   return (
-    <section className="h-svh w-full">
-      <div className="grid grid-cols-9 grid-rows-5 px-5 md:px-8 py-12 h-full w-full ">
-        <div className="col-start-1 col-end-10 row-end-4 md:row-end-6 flex flex-col gap-4 center self-end">
-          <NavigationBubbles />
-          <h2>
-            Accelarating <br />
-            humanity through growth.
-          </h2>
+    <section className="h-[200svh] w-full" ref={introRef}>
+      <Navbar containerRef={introRef} />
+      <div className="h-[100svh] flex flex-col justify-center items-center sticky top-0">
+        <div className="grid grid-cols-9 grid-rows-5 px-5 md:px-8 py-12 h-full w-full ">
+          <div className="col-start-1 col-end-10 row-end-4 md:row-end-6 flex flex-col gap-4 self-end">
+            <NavigationBubbles containerRef={introRef}/>
+            <VanishingParagraph containerRef={introRef} />
+          </div>
+          <Avatar containerRef={introRef}/>
         </div>
-        <Avatar />
+        <footer className="absolute bottom-4 md:grid grid-cols-9 grid-rows-1 px-8 w-full h-min z-10">
+          <motion.p
+          style={{  }}
+          className="col-start-9 self-end place-self-end row-start-1">
+            <a href="mailto:opportunities@winslow.xyz">
+              opportunities@winslow.xyz
+            </a>
+          </motion.p>
+        </footer>
       </div>
-      <footer className="md:grid grid-cols-9 grid-rows-1 px-8 py-4 w-full h-min z-10">
-        <p className="col-start-9 self-end place-self-end row-start-1">
-          <a href="mailto:opportunities@winslow.xyz">
-            opportunities@winslow.xyz
-          </a>
-        </p>
-        <p className="col-start-6 self-end place-self-end row-start-1">
-          <a href="https://linkedin.com">LinkedIn</a>
-        </p>
-      </footer>
     </section>
   );
 };

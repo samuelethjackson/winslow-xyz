@@ -10,7 +10,6 @@ import Contact from "@/components/sections/contact";
 export default function Home() {
   return (
     <main className="min-h-svh w-screen text-black dark:text-background no-scrollbar">
-      <Navbar />
       <Header />
       <Intro />
       <About />

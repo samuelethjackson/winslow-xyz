@@ -61,43 +61,44 @@ const Philantropy: React.FC<IntroProps> = ({}) => {
   }, [activeCard, scrollYProgress]);
 
   return (
-    <section
-      id="philantropy"
-      ref={carouselRef}
-      className="h-[400svh] bg-black text-background z-10 dark:bg-background dark:text-black"
-    >
-      <div className="flex flex-col h-[100svh] sticky top-0 w-screen no-scrollbar border-t border-black dark:border-background">
-        <div className="h-full flex flex-row w-[160vw] gap-0">
-          <div className="sticky bg-black left-0 flex flex-col gap-8 w-1/4 p-12 border-r border-background z-40">
-            <p>Acting beyond profit.</p>
-            <h3>Empowering Change. <br/>One Cause at a time.</h3>
+    <section id="philantropy" ref={ref}>
+      <div
+        ref={carouselRef}
+        className="h-[400svh] bg-black text-background z-10 dark:bg-background dark:text-black"
+      >
+        <div className="flex flex-col h-[100svh] sticky top-0 w-screen no-scrollbar border-t border-black dark:border-background">
+          <div className="h-full flex flex-row w-[160vw] gap-0">
+            <div className="sticky bg-black left-0 flex flex-col gap-8 w-1/4 p-12 border-r border-background z-40">
+              <p>Acting beyond profit.</p>
+              <h3>Empowering Change. <br/>One Cause at a time.</h3>
+            </div>
+            <div
+            ref={scrollContainerRef} className="w-full flex flex-row gap-0 transition-all duration-500 ease-out">{philantropy.map((item, index) => (
+              <PhilantropyCard
+                key={index}
+                number={index + 1}
+                character={item.character}
+                title={item.title}
+                description={item.description}
+                isActive={activeCard === index + 1}
+                onClick={() => handleCardClick(index + 1)}
+              />
+            ))}</div>
           </div>
-          <div
-          ref={scrollContainerRef} className="w-full flex flex-row gap-0 transition-all duration-500 ease-out">{philantropy.map((item, index) => (
-            <PhilantropyCard
-              key={index}
-              number={index + 1}
-              character={item.character}
-              title={item.title}
-              description={item.description}
-              isActive={activeCard === index + 1}
-              onClick={() => handleCardClick(index + 1)}
-            />
-          ))}</div>
-        </div>
-        <div className="hidden sticky left-0 h-16 bg-black border-t border-background text-center">
-            <button
-              className="text-background border-r border-background hover:text-opacity-80 transition duration-300 flex flex-col center size-16"
-              onClick={handlePrev}
-            >
-              <IoIosArrowRoundBack size={24} />
-            </button>
-            <button
-              className="text-background border-r border-background hover:text-opacity-80 transition duration-300 flex flex-col center size-16"
-              onClick={handleNext}
-            >
-              <IoIosArrowRoundForward size={24} />
-            </button>
+          <div className="hidden sticky left-0 h-16 bg-black border-t border-background text-center">
+              <button
+                className="text-background border-r border-background hover:text-opacity-80 transition duration-300 flex flex-col center size-16"
+                onClick={handlePrev}
+              >
+                <IoIosArrowRoundBack size={24} />
+              </button>
+              <button
+                className="text-background border-r border-background hover:text-opacity-80 transition duration-300 flex flex-col center size-16"
+                onClick={handleNext}
+              >
+                <IoIosArrowRoundForward size={24} />
+              </button>
+          </div>
         </div>
       </div>
     </section>
