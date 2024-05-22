@@ -59,7 +59,7 @@ const Philantropy: React.FC<IntroProps> = ({}) => {
         ref={carouselRef}
         className="h-[400svh] bg-black text-background z-10 dark:bg-background dark:text-black border-y border-black"
       >
-        <div className="flex flex-col h-[100svh] sticky top-0 w-screen no-scrollbar border-black dark:border-background">
+        <div className="flex flex-col h-[100svh] sticky top-0 w-screen no-scrollbar">
           <div className="h-full flex flex-row w-[160vw] gap-0">
             <div className="sticky bg-black left-0 flex flex-col gap-8 w-1/4 p-12 border-r border-background z-40">
               <p>Acting beyond profit.</p>

@@ -61,7 +61,7 @@ const LogoSlider: React.FC = () => {
       ref={ref}
       className="absolute left-0 mt-16 w-screen h-[200svh] flex flex-col justify-start"
     >
-      <div className="w-full h-svh sticky top-0 flex flex-col gap-8 items-center justify-center">
+      <div className="w-full h-svh sticky top-8 flex flex-col gap-8 items-center justify-center">
         <div className="w-full h-[608px] flex flex-col gap-8 center">
           <div className="w-full h-64 relative">
             <motion.div
