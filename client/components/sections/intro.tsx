@@ -6,6 +6,7 @@ import Avatar from "../avatar";
 import VanishingParagraph from "../ui/vanishing-paragraph";
 import Navbar from "../ui/navbar";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { GoArrowDownRight } from "react-icons/go";
 
 interface IntroProps {
   title?: string;
@@ -23,7 +24,7 @@ const Intro: React.FC<IntroProps> = ({}) => {
   const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
   
   return (
-    <section className="h-[200svh] w-full" ref={introRef}>
+    <section className="h-[150svh] w-full" ref={introRef}>
       <Navbar containerRef={introRef} />
       <div className="h-[100svh] flex flex-col justify-center items-center sticky top-0">
         <div className="grid grid-cols-9 grid-rows-5 px-5 md:px-8 py-12 h-full w-full ">
@@ -34,13 +35,14 @@ const Intro: React.FC<IntroProps> = ({}) => {
           <Avatar containerRef={introRef}/>
         </div>
         <footer className="absolute bottom-4 md:grid grid-cols-9 grid-rows-1 px-8 w-full h-min z-10">
-          <motion.p
-          style={{  }}
-          className="col-start-9 self-end place-self-end row-start-1">
-            <a href="mailto:opportunities@winslow.xyz">
-              opportunities@winslow.xyz
+          <motion.div
+          style={{ opacity, y }}
+          className="col-start-9 self-end place-self-end row-start-1 flex flex-row gap-1 center">
+            <a className="text-base"href="mailto:opportunities@winslow.xyz">
+              Scroll
             </a>
-          </motion.p>
+            <GoArrowDownRight size={24}/>
+          </motion.div>
         </footer>
       </div>
     </section>

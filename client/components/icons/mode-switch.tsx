@@ -14,10 +14,10 @@ const ModeSwitch: React.FC = () => {
 
   return (
     <div
-      className={`relative size-6 bg-black dark:bg-background rounded-full overflow-hidden border border-black dark:border-background transition-transform duration-1000 cursor-pointer`}
+      className={`relative size-4 bg-black dark:bg-background rounded-full overflow-hidden border border-black dark:border-background transition-transform duration-1000 cursor-pointer`}
       onClick={toggleTheme}
     >
-      <div className="bg-background dark:bg-black size-6 absolute top-0 left-[11px]"></div>
+      <div className="bg-background dark:bg-black size-4 absolute top-0 left-[8px]"></div>
     </div>
   );
 };

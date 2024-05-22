@@ -12,12 +12,12 @@ const Avatar: React.FC<AvatarProps> = ({ containerRef }) => {
     offset: ["start start", "end end"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.3], [1, 1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.3], [0, -300]);
+  const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
 
   return (
     <motion.div 
-      style={{  }}
+      style={{ opacity, y }}
       className="col-start-1 col-end-10 md:col-start-7 md:col-end-10 row-end-6 md:row-start-2 md:row-end-3 self-end flex-col gap-8 group md:-mb-16 md:ml-12">
       <div className="rounded-2xl overflow-clip shadow-xl aspect-video flex flex-col justify-center transition-all duration-1000 md:mr-0 md:ml-0 group/image">
         <Image

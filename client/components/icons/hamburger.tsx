@@ -16,25 +16,23 @@ interface HamburgerProps {
 const Hamburger: React.FC<HamburgerProps> = ({ color = "black" }) => {
   const { theme } = useTheme();
 
-  const strokeColor = theme === "dark" ? "#E5E5E5" : "#000000";
+  const strokeColor = theme === "dark" ? "#000000" : "#E5E5E5";
 
   return (
     <Drawer.Root direction="top">
       <Drawer.Trigger asChild>
-        <div className="flex flex-row center gap-4 cursor-pointer">
-          <svg
-            width="28"
-            height="32"
-            viewBox="0 0 28 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="transition-all duration-500 ease-in-out"
-          >
-            {/* Use the passed color prop for stroke, and provide a way to override it for dark mode if needed */}
-            <path d="M0 6H28" stroke={strokeColor} strokeWidth={1.3} />
-            <path d="M0 16H28" stroke={strokeColor} strokeWidth={1.3} />
-            <path d="M0 26H28" stroke={strokeColor} strokeWidth={1.3} />
-          </svg>
+        <div className="flex flex-row center gap-4 cursor-pointer size-10 rounded-md p-1 bg-black dark:bg-background">
+          <svg className="c-sidebar__toggle-icon size-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="2" height="2" fill={strokeColor}></rect>
+                <rect x="2" y="7" width="2" height="2" fill={strokeColor}></rect>
+                  <rect x="2" y="12" width="2" height="2" fill={strokeColor}></rect>
+                <rect x="7" y="2" width="2" height="2" fill={strokeColor}></rect>
+                <rect x="7" y="7" width="2" height="2" fill={strokeColor}></rect>
+                <rect x="7" y="12" width="2" height="2" fill={strokeColor}></rect>
+                <rect x="12" y="2" width="2" height="2" fill={strokeColor}></rect>
+                <rect x="12" y="7" width="2" height="2" fill={strokeColor}></rect>
+                <rect x="12" y="12" width="2" height="2" fill={strokeColor}></rect>
+            </svg>
         </div>
       </Drawer.Trigger>
       <Drawer.Portal>
@@ -56,3 +54,4 @@ const Hamburger: React.FC<HamburgerProps> = ({ color = "black" }) => {
 };
 
 export default Hamburger;
+

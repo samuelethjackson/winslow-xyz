@@ -11,7 +11,7 @@ interface VanishingCharacterProps {
 const VanishingCharacter: React.FC<VanishingCharacterProps> = ({ value, containerRef }) => {
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["0.25 start", "end end"],
+    offset: ["start start", "end end"],
   });
 
   const characters = value.split("");
@@ -57,7 +57,7 @@ const Character = ({
   const opacityStart = range[0] + (range[1] - range[0]) * 0.5;
   const opacity = useTransform(progress, [opacityStart, range[1]], [1, 0]);
   return (
-    <motion.span className="flex flex-wrap" style={{ }}>
+    <motion.span className="flex flex-wrap" style={{ opacity, y }}>
       {character}
     </motion.span>
   );

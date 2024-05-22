@@ -10,7 +10,7 @@ const LogoCloud: React.FC = () => {
   }) => (
     <Link
       href={`${link}`}
-      className="flex flex-col grayscale p-4 bg-background h-80 text-black justify-between items-center group cursor-pointer"
+      className="flex flex-col grayscale p-4 bg-background h-64 text-black justify-between items-center group cursor-pointer"
     >
       <span className="hidden md:block h-4"></span>
       <img
@@ -18,7 +18,7 @@ const LogoCloud: React.FC = () => {
         src={src}
         alt={`${name}`}
       />
-      <span className="hidden md:block w-full text-center uppercase text-sm transition-opacity duration-500 ease-in-out group-hover:opacity-0">
+      <span className="hidden md:block w-full text-center uppercase text-xs transition-opacity duration-500 ease-in-out group-hover:opacity-0">
         {name}
       </span>
     </Link>
@@ -35,12 +35,12 @@ const LogoCloud: React.FC = () => {
           />
           <Logo
             link=""
-            name="Collider"
+            name="Collider Capital"
             src="https://k21.kanon.art/images/collider.png"
           />
           <Logo
             link=""
-            name="Divergence"
+            name="Divergence Capital"
             src="https://k21.kanon.art/images/divergence.svg"
           />
           <Logo

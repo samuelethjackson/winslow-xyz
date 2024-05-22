@@ -19,21 +19,21 @@ const NavigationBubbles: React.FC<NavigationBubblesProps> = ({ containerRef }) =
 
   return (
     <motion.div
-    style={{  }}
+    style={{ opacity, y }}
      className="col-start-1 col-end-10 grid grid-cols-11 md:grid-cols-9 row-start-3 row-span-1 grid-rows-2 h-24 w-full">
       <div className="-rotate-[60deg] md:rotate-0 col-start-1 row-start-2">
         <Pill label="About" href="/#about"/>
       </div>
-      <div className="-rotate-[60deg] md:rotate-0 col-start-3 md:col-start-2 row-start-2">
+      <div className="-rotate-[60deg] md:rotate-0 -ml-8 col-start-3 md:col-start-2 row-start-2">
         <Pill label="Investing" href="/#investing"/>
       </div>
-      <div className="-rotate-[0deg] md:ml-28 md:mt-4 col-start-7 md:col-start-2 row-start-2 md:row-start-1 md:rotate-[28deg]">
+      <div className="-rotate-[0deg] md:ml-20 md:mt-6 col-start-7 md:col-start-2 row-start-2 md:row-start-1 md:rotate-[28deg]">
       <Pill label="Contact" href="/#contact" dark/>
       </div>
-      <div className="-rotate-[60deg] md:rotate-0 col-start-5 row-start-2">
+      <div className="-rotate-[60deg] md:rotate-0 col-start-4 row-start-2">
         <Pill label="Philantropy" href="/#philantropy"/>
       </div>
-      <div className="hidden md:flex col-start-4 row-start-2 size-12 bg-black text-background dark:bg-white dark:text-black center rounded-full text-4xl pt-3 self-end">*</div>
+      <div className="hidden md:flex col-start-3 ml-20 mb-1 row-start-2 size-12 bg-black text-background dark:bg-white dark:text-black center rounded-full text-4xl pt-3 self-end">*</div>
     </motion.div>
   );
 };

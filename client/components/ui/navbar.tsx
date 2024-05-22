@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ containerRef }) => {
       className="fixed top-4 w-full flex justify-center items-center p-2 z-50"
     >
       <div className="w-full max-w-xl flex flex-row bg-black/50 rounded-full p-2 ring-1 ring-background/10">
-        <ul className="w-full h-10 flex flex-row gap-4 justify-between bg-black rounded-full text-white uppercase text-xs p-0.5">
+        <ul className="w-full h-10 flex flex-row gap-4 justify-between bg-black/80 rounded-full text-white uppercase text-xs p-0.5">
           {links.map((link) => (
             <motion.li
               className="h-full w-full flex flex-row gap-4 center relative"

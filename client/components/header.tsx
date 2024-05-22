@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ title, menu }) => {
       </p>
       </>
       )}
-      <div className='absolute top-0 right-4 md:right-6 row-start-1 flex flex-row gap-10 center'>
+      <div className='absolute top-0 right-4 md:right-6 row-start-1 flex flex-row gap-6 center'>
       {!menu && (
         <>
       <ModeSwitch />
