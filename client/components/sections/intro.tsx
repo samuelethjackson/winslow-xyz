@@ -17,15 +17,14 @@ const Intro: React.FC<IntroProps> = ({}) => {
   const introRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: introRef,
-    offset: ["start start", "end end"],
-    layoutEffect: false,
+    offset: ["start start", "end 0.2"],
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
 
   return (
-    <section className="h-[150svh] w-full" ref={introRef}>
+    <section className="h-[120svh] w-full" ref={introRef}>
       <Navbar containerRef={introRef} />
       <div className="h-[100svh] flex flex-col justify-center items-center sticky top-0">
         <motion.div
