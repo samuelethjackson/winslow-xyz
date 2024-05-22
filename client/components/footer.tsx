@@ -32,6 +32,9 @@ const Footer: React.FC<FooterProps> = ({ title }) => {
         <p className="col-start-6 self-end place-self-end row-start-1">
           <a href="https://linkedin.com">LinkedIn</a>
         </p>
+        <p className="col-start-5 self-end place-self-end row-start-1">
+          <a href="https://twitter.com/">Twitter</a>
+        </p>
         <p className="col-start-1 col-end-4 self-end row-start-1">
           © 2024 Winslow Strong
         </p>

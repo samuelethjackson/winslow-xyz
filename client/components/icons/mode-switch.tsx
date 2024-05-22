@@ -10,8 +10,6 @@ const ModeSwitch: React.FC = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  console.log(`Current theme: ${theme}`);
-
   return (
     <div
       className={`relative size-4 bg-black dark:bg-background rounded-full overflow-hidden border border-black dark:border-background transition-transform duration-1000 cursor-pointer`}

@@ -26,7 +26,7 @@ const ContactPanel: React.FC<ContactProps> = (props) => {
             </button>
           </Drawer.Close>
         <div className="w-full h-full flex flex-col center text-white gap-4">
-          <p>Give me a shout! I'm ready to chat.</p>
+          <p>Give me a shout! I&apos;m ready to chat.</p>
           <a className="big-link">opportunities@winslow.xyz</a>
         </div>
       </div>

@@ -37,9 +37,9 @@ const Navbar: React.FC<NavbarProps> = ({ containerRef }) => {
             >
               <Link
                 className={clsx(
-                  "flex w-full h-full rounded-full center hover:text-zinc-500 transition",
+                  "flex w-full h-full rounded-full center text-zinc-400 hover:text-white transition",
                   {
-                    "text-white pointer-events-none":
+                    "!text-white pointer-events-none":
                       activeSection === link.name,
                   }
                 )}

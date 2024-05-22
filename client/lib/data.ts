@@ -32,13 +32,13 @@ export const links = [
 
 export const philantropy = [
   {
-    title: "Innovating for Social Good",
+    title: "Innovating Social Good",
     character: "*",
     description:
       "At the heart of my endeavors lies a steadfast commitment to innovation with a purpose. I believe in supporting initiatives that harness the power of technology and creativity to address pressing societal challenges. From promoting access to quality education to advancing healthcare solutions, I strive to catalyze positive change.",
   },
   {
-    title: "Fostering Sustainable Development",
+    title: "Promoting sustainability",
     character: "∆",
     description:
       "Sustainability isn't just a buzzword—it's a guiding principle. I advocate for initiatives that prioritize environmental conservation, economic empowerment, and social equity. By investing in projects that promote sustainable development, I aim to create a more resilient and inclusive future for generations to come.",

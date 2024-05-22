@@ -4,22 +4,11 @@ import React from "react";
 import Link from "next/link";
 import { useScroll, motion, useTransform } from "framer-motion";
 
-type NavigationBubblesProps = {
-  containerRef: React.RefObject<HTMLDivElement>;
-};  
 
-const NavigationBubbles: React.FC<NavigationBubblesProps> = ({ containerRef }) => {
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
+const NavigationBubbles = () => {
 
   return (
     <motion.div
-    style={{ opacity, y }}
      className="col-start-1 col-end-10 grid grid-cols-11 md:grid-cols-9 row-start-3 row-span-1 grid-rows-2 h-24 w-full">
       <div className="-rotate-[60deg] md:rotate-0 col-start-1 row-start-2">
         <Pill label="About" href="/#about"/>

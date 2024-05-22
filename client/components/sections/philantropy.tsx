@@ -4,8 +4,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { philantropy } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import PhilantropyCard from "../ui/philantropy-card";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import {
+  useMotionValueEvent,
+  useScroll,
+  motion,
+  useSpring,
+} from "framer-motion";
 
 interface IntroProps {
   title?: string;
@@ -14,22 +19,9 @@ interface IntroProps {
 
 const Philantropy: React.FC<IntroProps> = ({}) => {
   const { ref } = useSectionInView("Philantropy");
-  const carouselRef = useRef(null)
+  const carouselRef = useRef(null);
   const [activeCard, setActiveCard] = useState<number | null>(1);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-
-  const handleCardClick = (number: number) => {
-    setActiveCard(prev => prev === number ? null : number); // Toggle active state
-  };
-
-  const handleNext = () => {
-    setActiveCard(prev => (prev === 4 ? 1 : (prev ?? 0) + 1)); // Cycle forward
-  };
-
-  const handlePrev = () => {
-    setActiveCard(prev => (prev === 1 ? 4 : (prev ?? 0) - 1)); // Cycle backward
-  };
 
   useEffect(() => {
     if (activeCard !== null && scrollContainerRef.current) {
@@ -40,7 +32,7 @@ const Philantropy: React.FC<IntroProps> = ({}) => {
 
   const { scrollYProgress } = useScroll({
     target: carouselRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -55,10 +47,11 @@ const Philantropy: React.FC<IntroProps> = ({}) => {
     }
   });
 
-  useEffect(() => {
-    console.log("Current active card:", activeCard);
-    console.log("Current scroll Y progress:", scrollYProgress.get());
-  }, [activeCard, scrollYProgress]);
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <section id="philantropy" ref={ref}>
@@ -70,35 +63,34 @@ const Philantropy: React.FC<IntroProps> = ({}) => {
           <div className="h-full flex flex-row w-[160vw] gap-0">
             <div className="sticky bg-black left-0 flex flex-col gap-8 w-1/4 p-12 border-r border-background z-40">
               <p>Acting beyond profit.</p>
-              <h3>Empowering Change. <br/>One Cause at a time.</h3>
+              <h3>
+                Empowering Change. <br />
+                One Cause at a time.
+              </h3>
             </div>
             <div
-            ref={scrollContainerRef} className="w-full flex flex-row gap-0 transition-all duration-500 ease-out">{philantropy.map((item, index) => (
-              <PhilantropyCard
-                key={index}
-                number={index + 1}
-                character={item.character}
-                title={item.title}
-                description={item.description}
-                isActive={activeCard === index + 1}
-                onClick={() => handleCardClick(index + 1)}
-              />
-            ))}</div>
+              ref={scrollContainerRef}
+              className="w-full flex flex-row gap-0 transition-all duration-500 ease-out"
+            >
+              {philantropy.map((item, index) => (
+                <PhilantropyCard
+                  key={index}
+                  number={index + 1}
+                  character={item.character}
+                  title={item.title}
+                  description={item.description}
+                  isActive={activeCard === index + 1}
+                />
+              ))}
+            </div>
           </div>
-          <div className="hidden sticky left-0 h-16 bg-black border-t border-background text-center">
-              <button
-                className="text-background border-r border-background hover:text-opacity-80 transition duration-300 flex flex-col center size-16"
-                onClick={handlePrev}
-              >
-                <IoIosArrowRoundBack size={24} />
-              </button>
-              <button
-                className="text-background border-r border-background hover:text-opacity-80 transition duration-300 flex flex-col center size-16"
-                onClick={handleNext}
-              >
-                <IoIosArrowRoundForward size={24} />
-              </button>
-          </div>
+          <motion.div className="sticky left-0 h-4 bg-black text-center flex flex-col items-start border-t border-background">
+            <div className="absolute top-0 left-0 w-full h-px bg-black z-10"/>
+            <motion.div
+              className="absolute top-0 left-0 right-0 origin-left h-full w-full bg-background"
+              style={{ scaleX }}
+            ></motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

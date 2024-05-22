@@ -1,10 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-import NavigationBubbles from "../navigation-bubbles";
-import Avatar from "../avatar";
-import VanishingParagraph from "../ui/vanishing-paragraph";
-import Navbar from "../ui/navbar";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Paragraph from "../ui/opacity-character";
 
@@ -25,7 +21,7 @@ const Statement: React.FC<IntroProps> = ({}) => {
 
   return (
     <section
-      className="h-fulll w-full bg-black text-background flex flex-col gap-8 pb-32"
+      className="h-full w-full bg-black text-background flex flex-col gap-8 pb-32"
       ref={statementRef}
     >
       <Paragraph paragraph="As a former founder, I admire those who succeed against the odds. I support leaders who follow their hearts and minds. Those who are willing to face challenges, fight for their team and keep going until they reach their goal. I have faced the obstacles of building a successful startup myself. Helping other founders build thriving businesses is my ambition." />

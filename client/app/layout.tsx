@@ -3,13 +3,13 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import SmoothScroller from "@/app/lenis";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Winslow Strong – Angel, Investor, Philantropist",
-  description: "Winslow Strong is an american Investor, Angel & Philantropist. Get in touch.",
+  description:
+    "Winslow Strong is an american Investor, Angel & Philantropist. Get in touch.",
 };
 
 export default function RootLayout({
@@ -19,20 +19,19 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
-      <body className={inter.className} vaul-drawer-wrapper="">
-        {/* <SmoothScroller /> */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ActiveSectionContextProvider>
-            {children}
-          </ActiveSectionContextProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+      <html lang="en">
+        <body className={inter.className} vaul-drawer-wrapper="">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ActiveSectionContextProvider>
+              {children}
+            </ActiveSectionContextProvider>
+          </ThemeProvider>
+        </body>
+      </html>
   );
 }

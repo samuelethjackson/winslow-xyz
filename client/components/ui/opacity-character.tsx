@@ -18,7 +18,7 @@ export default function Paragraph({ paragraph = "Test" }: ParagraphProps) {
   return (
     <div
       ref={container}
-      className="h-[150svh] w-full"
+      className="h-[200svh] w-full"
     >
       <div className="grid grid-cols-9 grid-rows-1 px-5 md:px-8 py-12 h-svh w-full sticky top-0">
         <div className="col-start-2 col-end-9 self-center flex flex-wrap font-semibold tracking-tighter text-5xl leading-[1.1]">
