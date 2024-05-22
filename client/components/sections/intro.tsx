@@ -43,7 +43,7 @@ const Intro: React.FC<IntroProps> = ({}) => {
         </motion.div>
         <div className="absolute top-0 left-0 grid grid-cols-9 grid-rows-1 px-5 md:px-8 pb-12 pt-4 h-full w-full ">
           <div className="col-start-1 col-end-10 row-end-4 md:row-end-6 flex flex-col gap-4 self-end">
-            <VanishingParagraph containerRef={introRef} />
+            <VanishingParagraph scrollYProgress={scrollYProgress} />
           </div>
         </div>
         <footer className="absolute bottom-4 md:grid grid-cols-9 grid-rows-1 px-8 w-full h-min z-10">

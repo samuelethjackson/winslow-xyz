@@ -5,14 +5,10 @@ import { useScroll, motion, MotionValue, useTransform } from "framer-motion";
 
 interface VanishingCharacterProps {
   value: string;
-  containerRef: React.RefObject<HTMLDivElement>;
+  scrollYProgress: MotionValue<number>;
 }
 
-const VanishingCharacter: React.FC<VanishingCharacterProps> = ({ value, containerRef }) => {
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+const VanishingCharacter: React.FC<VanishingCharacterProps> = ({ value, scrollYProgress }) => {
 
   const characters = value.split("");
 
