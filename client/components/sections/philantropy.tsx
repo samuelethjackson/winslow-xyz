@@ -84,7 +84,7 @@ const Philantropy: React.FC<IntroProps> = ({}) => {
               ))}
             </div>
           </div>
-          <motion.div className="sticky left-0 h-4 bg-black text-center flex flex-col items-start border-t border-background">
+          <motion.div className="sticky left-0 h-3 bg-black text-center flex flex-col items-start border-t border-background">
             <div className="absolute top-0 left-0 w-full h-px bg-black z-10"/>
             <motion.div
               className="absolute top-0 left-0 right-0 origin-left h-full w-full bg-background"

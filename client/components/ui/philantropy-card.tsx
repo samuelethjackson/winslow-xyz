@@ -11,7 +11,7 @@ interface PhilantropyCardProps {
 const PhilantropyCard: React.FC<PhilantropyCardProps> = ({ number, title, description, character, isActive }) => {
   return (
     <div 
-      className={`relative h-full w-full flex flex-col gap-4 p-12 pt-24 snap-center justify-between border-r border-background group ${isActive ? 'bg-background text-black' : ' transition-all duration-1000 ease-in-out'}`}
+      className={`relative h-full w-full flex flex-col gap-4 p-12 pt-24 snap-center justify-between border-r border-background group ${isActive ? 'bg-background/10' : ' transition-all duration-500 ease-in-out'}`}
     >
       <h2 className={`transition-all duration-1000 ease-in-out ${isActive ? '' : 'text-7xl opacity-30'}`}>{number}</h2>
       <div className='w-full h-full flex flex-col gap-8 justify-end'>

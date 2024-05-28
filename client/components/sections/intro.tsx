@@ -24,12 +24,11 @@ const Intro: React.FC<IntroProps> = ({}) => {
   const y = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
 
   return (
-    <section className="h-[120svh] w-full" ref={introRef}>
-      <Navbar containerRef={introRef} />
+    <section className="sticky top-0 left-0 h-[120svh] w-full -z-10" ref={introRef}>
       <div className="h-[100svh] flex flex-col justify-center items-center sticky top-0">
         <motion.div
           style={{ opacity, y }}
-          className="absolute top-0 left-0 grid grid-cols-9 grid-rows-5 px-5 md:px-8 pb-12 pt-4 h-full w-full "
+          className="absolute top-0 left-0 grid grid-cols-9 grid-rows-5 px-5 md:px-8 pb-12 pt-4 h-full w-full z-50"
         >
           <p className="col-start-1 col-end-8 self-start row-start-1">
             Winslow Strong

@@ -2,23 +2,19 @@
 
 import React from "react";
 import Link from "next/link";
-import { useScroll, motion, useTransform } from "framer-motion";
+import { useScroll, motion, useTransform, MotionValue } from "framer-motion";
 import { links } from "@/lib/data";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
 interface NavbarProps {
-  containerRef: React.RefObject<HTMLDivElement>;
+  scrollYProgress: MotionValue<number>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ containerRef }) => {
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
+const Navbar: React.FC<NavbarProps> = ({ scrollYProgress }) => {
 
-  const y = useTransform(scrollYProgress, [0, 0.95, 1], [-20, -20, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 0.95, 1], [0, 0, 1]);
+  const y = useTransform(scrollYProgress, [0, 0.05], [ -20, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
 
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
@@ -28,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ containerRef }) => {
       style={{ opacity, y }}
       className="fixed top-4 w-full flex justify-center items-center p-2 z-50"
     >
-      <div className="w-full max-w-xl flex flex-row bg-black/50 rounded-full p-2 ring-1 ring-background/10">
+      <div className="w-full max-w-xl flex flex-row bg-black/20 rounded-full p-2 ring-1 ring-background/10">
         <ul className="w-full h-10 flex flex-row gap-4 justify-between bg-black/80 rounded-full text-white uppercase text-xs p-0.5">
           {links.map((link) => (
             <motion.li

@@ -32,8 +32,8 @@ const LogoSlider: React.FC = () => {
     };
   }, []);
 
-  const xTop = useTransform(scrollYProgress, [0, 1], [-2560+screenCenter-128, screenCenter]);
-  const xBottom = useTransform(scrollYProgress, [0, 1], [1280, -2560+screenCenter-128]);
+  const xTop = useTransform(scrollYProgress, [0, 1], [-1920+screenCenter-128, screenCenter]);
+  const xBottom = useTransform(scrollYProgress, [0, 1], [980, -1920+screenCenter-128]);
 
   const Logo: React.FC<{ src: string; name: string; link: string }> = ({
     src,
@@ -42,7 +42,7 @@ const LogoSlider: React.FC = () => {
   }) => (
     <Link
       href={`${link}`}
-      className="flex flex-col grayscale p-4 bg-background size-64 text-black justify-between items-center group cursor-pointer"
+      className="flex flex-col grayscale p-4 bg-background size-48 text-black justify-between items-center group cursor-pointer"
     >
       <span className="hidden md:block h-4"></span>
       <img
@@ -59,11 +59,11 @@ const LogoSlider: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="absolute left-0 mt-16 w-screen h-[200svh] flex flex-col justify-start"
+      className="absolute left-0 mt-16 w-screen h-[180svh] flex flex-col justify-start"
     >
       <div className="w-full h-svh sticky top-8 flex flex-col gap-8 items-center justify-center">
-        <div className="w-full h-[608px] flex flex-col gap-8 center">
-          <div className="w-full h-64 relative">
+        <div className="w-full h-[480px] flex flex-col gap-8 center">
+          <div className="w-full h-48 relative">
             <motion.div
               className="absolute top-0 left-0 w-max grid grid-cols-10 bg-black gap-[1px] border-black border"
               style={{ x: xTop }}
@@ -78,7 +78,7 @@ const LogoSlider: React.FC = () => {
               ))}
             </motion.div>
           </div>
-          <div className="w-full h-64 relative">
+          <div className="w-full h-48 relative">
             <motion.div
               className="absolute top-0 left-0 w-max grid grid-cols-10 bg-black gap-[1px] border-black border"
               style={{ x: xBottom }}

@@ -16,9 +16,9 @@ const Investing: React.FC<IntroProps> = ({}) => {
     <section
     id="investing"
     ref={ref}
-    className="bg-background h-[220svh] text-black z-10 dark:bg-black dark:text-background grid grid-cols-9 pt-40 pb-32">
+    className="bg-background h-[210svh] text-black z-10 dark:bg-black dark:text-background grid grid-cols-9 pt-40">
       <div className="col-start-2 col-end-9 flex flex-col gap-0 px-5 md:px-8 h-full w-full">
-        <div className="w-full flex flex-row gap-4">
+        <div className="w-full flex flex-row gap-4 center">
           <h3 className="text-center w-full">
             Investing
           </h3>

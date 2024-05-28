@@ -1,8 +1,10 @@
 "use client"
 
-import React from "react";
+import React, { useRef } from "react";
 import { about } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
+import Navbar from "@/components/ui/navbar";
+import { useScroll } from "framer-motion";
 
 interface IntroProps {
   title?: string;
@@ -11,13 +13,19 @@ interface IntroProps {
 
 const About: React.FC<IntroProps> = ({}) => {
   const { ref } = useSectionInView("About");
+  const aboutRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: aboutRef,
+    offset: ["start start", "end start"],
+  });
 
   return (
     <section
     id="about"
-    ref={ref}
+    ref={aboutRef}
     className="h-svh bg-black text-background z-10 dark:bg-background dark:text-black">
-      <div className="grid grid-cols-9 grid-rows-4 px-5 md:px-8 py-12 h-full w-full">
+      <Navbar scrollYProgress={scrollYProgress} /> 
+      <div ref={ref} className="grid grid-cols-9 grid-rows-4 px-5 md:px-8 py-12 h-full w-full">
         <h3 className="col-start-2 col-end-6 row-start-2 self-center mb-16">
           Winslow Strong.
           <span className="opacity-30"> Investor, Angel & Philantropist.</span>
